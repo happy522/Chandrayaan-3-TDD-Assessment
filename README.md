@@ -1,22 +1,22 @@
-# Chandrayaan 3 Lunar Craft: Galactic Space Craft Control
+# Chandrayaan 3 TDD Assessment
 
 ## Problem Statement
 
-Welcome to the Chandrayaan 3 Lunar Craft project! As a scientist at ISRO, your mission is to develop a program that translates commands sent from Earth into instructions understood by the spacecraft. This cutting-edge lunar spacecraft, Chandrayaan 3, navigates through the galaxy using galactic coordinates represented by x, y, and z coordinates. The x-axis signifies east or west location, the y-axis denotes north or south location, and the z-axis represents the distance above or below the galactic plane.
+As a scientist at ISRO controlling the latest lunar spacecraft Chandrayaan 3, your task is to develop a program that translates commands sent from Earth into instructions understood by the spacecraft. The spacecraft navigates through the galaxy using galactic coordinates, represented by x, y, z coordinates (x for east or west location, y for north or south location, and z for distance above or below the galactic plane).
 
 ## Requirements
 
-You'll start with the spacecraft's initial position (x, y, z) and its facing direction (N, S, E, W, Up, Down). The spacecraft receives a character array of commands, and your task is to implement the following functionalities:
+You will be given the initial starting point (x, y, z) of the spacecraft and the direction it is facing (N, S, E, W, Up, Down). The spacecraft receives a character array of commands, and you are required to implement the following functionalities:
 
-1. Move the spacecraft forward/backward (f, b): The spacecraft advances or reverses one step based on its current direction.
-2. Turn the spacecraft left/right (l, r): The spacecraft rotates 90 degrees to the left or right, altering its facing direction.
-3. Turn the spacecraft up/down (u, d): The spacecraft adjusts its angle by rotating upwards or downwards.
+Move the spacecraft forward/backward (f, b): The spacecraft moves one step forward or backward based on its current direction.
+Turn the spacecraft left/right (l, r): The spacecraft rotates 90 degrees to the left or right, changing its facing direction.
+Turn the spacecraft up/down (u, d): The spacecraft changes its angle, rotating upwards or downwards.
 
 **Note:**
 
-- The spacecraft’s initial direction (N, S, E, W, Up, Down) serves as the reference frame for movement and rotation.
-- Diagonal movement or rotation is not allowed; the spacecraft moves only in its current facing direction.
-- Assume that the spacecraft’s movements and rotations are rigid and bounded by the galactic boundaries.
+The spacecraft’s initial direction (N, S, E, W, Up, Down) represents the reference frame for movement and rotation.
+The spacecraft cannot move or rotate diagonally; it can only move in the direction it is currently facing.
+Assume that the spacecraft’s movement and rotations are rigid, and it cannot move beyond the galactic boundaries.
 
 ## Example
 

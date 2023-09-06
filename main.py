@@ -1,39 +1,40 @@
 class GalacticSpacecraft:
     def __init__(self, x, y, z, direction):
+        # Initialize the spacecraft's position (x, y, z) and direction (N, S, E, W, Up, Down)
         self.x = x
         self.y = y
         self.z = z
         self.direction = direction
 
-    def move_forward(self, steps=1):
+    def move_forward(self):
         # Move the spacecraft one step forward based on its current direction
         if self.direction == "N":
-            self.y += steps
+            self.y += 1
         elif self.direction == "S":
-            self.y -= steps
+            self.y -= 1
         elif self.direction == "E":
-            self.x += steps
+            self.x += 1
         elif self.direction == "W":
-            self.x -= steps
+            self.x -= 1
         elif self.direction == "Up":
-            self.z += steps
+            self.z += 1
         elif self.direction == "Down":
-            self.z -= steps
+            self.z -= 1
 
-    def move_backward(self, steps=1):
+    def move_backward(self):
         # Move the spacecraft one step backward based on its current direction
         if self.direction == "N":
-            self.y -= steps
+            self.y -= 1
         elif self.direction == "S":
-            self.y += steps
+            self.y += 1
         elif self.direction == "E":
-            self.x -= steps
+            self.x -= 1
         elif self.direction == "W":
-            self.x += steps
+            self.x += 1
         elif self.direction == "Up":
-            self.z -= steps
+            self.z -= 1
         elif self.direction == "Down":
-            self.z += steps
+            self.z += 1
 
     def turn_left(self):
         # Turn the spacecraft 90 degrees to the left
@@ -44,6 +45,10 @@ class GalacticSpacecraft:
         elif self.direction == "E":
             self.direction = "N"
         elif self.direction == "W":
+            self.direction = "S"
+        elif self.direction == "Up":
+            self.direction = "N"
+        elif self.direction == "Down":
             self.direction = "S"
 
     def turn_right(self):
@@ -56,6 +61,10 @@ class GalacticSpacecraft:
             self.direction = "S"
         elif self.direction == "W":
             self.direction = "N"
+        elif self.direction == "Up":
+            self.direction = "S"
+        elif self.direction == "Down":
+            self.direction = "N"
 
     def turn_up(self):
         # Turn the spacecraft upwards
@@ -67,6 +76,10 @@ class GalacticSpacecraft:
             self.direction = "S"
         elif self.direction == "Down":
             self.direction = "N"
+        elif self.direction == "E":
+            self.direction = "Up"
+        elif self.direction == "W":
+            self.direction = "Down"
 
     def turn_down(self):
         # Turn the spacecraft downwards
@@ -78,37 +91,23 @@ class GalacticSpacecraft:
             self.direction = "N"
         elif self.direction == "Down":
             self.direction = "S"
+        elif self.direction == "E":
+            self.direction = "Down"
+        elif self.direction == "W":
+            self.direction = "Up"
 
     def execute_commands(self, commands):
-        i = 0
-        while i < len(commands):
-            command = commands[i]
-
-            print(f"Executing command: {command}")  # Print the executed command
-
+        # Execute a sequence of commands to control the spacecraft
+        for command in commands:
             if command == "f":
-                count = 1
-                while i + 1 < len(commands) and commands[i + 1] == "f":
-                    count += 1
-                    i += 1
-                self.move_forward(count)
+                self.move_forward()  # Move the spacecraft forward
             elif command == "b":
-                count = 1
-                while i + 1 < len(commands) and commands[i + 1] == "b":
-                    count += 1
-                    i += 1
-                self.move_backward(count)
+                self.move_backward()  # Move the spacecraft backward
             elif command == "l":
-                self.turn_left()
+                self.turn_left()  # Turn the spacecraft left
             elif command == "r":
-                self.turn_right()
+                self.turn_right()  # Turn the spacecraft right
             elif command == "u":
-                self.turn_up()
+                self.turn_up()  # Turn the spacecraft up
             elif command == "d":
-                self.turn_down()
-            i += 1
-
-
-            print(f"Current Direction: {self.direction}")  # Print current direction
-            print(f"Current Position (X, Y, Z): ({self.x}, {self.y}, {self.z})")  # Print current position
-
+                self.turn_down()  # Turn the spacecraft down

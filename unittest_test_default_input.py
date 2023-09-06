@@ -71,7 +71,7 @@ class TestGalacticSpacecraft(unittest.TestCase):
         self.assertEqual(spacecraft.direction, 'Up')
 
         # Additional test cases with different initial directions
-        spacecraft = GalacticSpacecraft(0, 0, 0, 'S')
+        spacecraft = GalacticSpacecraft(0, 0, 0, 'Up')
         spacecraft.turn_up()
         self.assertEqual(spacecraft.direction, 'Down')
 
@@ -85,6 +85,11 @@ class TestGalacticSpacecraft(unittest.TestCase):
 
         # Additional test cases with different initial directions
         spacecraft = GalacticSpacecraft(0, 0, 0, 'S')
+        spacecraft.turn_down()
+        self.assertEqual(spacecraft.direction, 'Up')
+
+        # Additional test cases with different initial directions
+        spacecraft = GalacticSpacecraft(0, 0, 0, 'Down')
         spacecraft.turn_down()
         self.assertEqual(spacecraft.direction, 'Up')
 

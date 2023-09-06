@@ -73,7 +73,7 @@ class GalacticSpacecraft:
         elif self.direction == "S":
             self.direction = "Down"
         elif self.direction == "Up":
-            self.direction = "S"
+            self.direction = "Down"
         elif self.direction == "Down":
             self.direction = "N"
         elif self.direction == "E":
@@ -90,7 +90,7 @@ class GalacticSpacecraft:
         elif self.direction == "Up":
             self.direction = "N"
         elif self.direction == "Down":
-            self.direction = "S"
+            self.direction = "Up"
         elif self.direction == "E":
             self.direction = "Down"
         elif self.direction == "W":

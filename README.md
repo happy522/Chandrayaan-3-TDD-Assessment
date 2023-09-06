@@ -55,8 +55,8 @@ Final Direction: N
 5. **user_input.py** - This file allows the user to input coordinates and directions with validation.
 
 **Commands for testing using terminal:**
-- python -m unittest unittest_test_default_input.py
-- pytest pytest_test.py
+- ```python -m unittest unittest_test_default_input.py```
+- ```pytest pytest_test.py```
 
 
 
